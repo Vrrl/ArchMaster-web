@@ -1,0 +1,16 @@
+html{
+  all: unset;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  background-color: var(--color-background);
+}
