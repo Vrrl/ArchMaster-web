@@ -1,12 +1,10 @@
 <template>
   <header>
 
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/explore">Explore</RouterLink>
-        <RouterLink to="/new-challenge">New Challenge</RouterLink>
-      </nav>
-    </div>
+    <nav class="navbar">
+      <RouterLink to="/explore">Explore</RouterLink>
+      <RouterLink to="/new-challenge">New Challenge</RouterLink>
+    </nav>
   </header>
   <main>
     <RouterView />
@@ -20,6 +18,24 @@
 <style scoped lang="scss">
 main{
   margin: auto;
-  max-width: 1200px;
+  padding: 16px;
+  max-width: 1500px;
+}
+
+.navbar{
+  width: 100%;
+  height: 50px;
+  background-color: var(--menus-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & *{
+    margin: 4px 12px;
+    padding: 4px;
+  }
+
+  
+
 }
 </style>

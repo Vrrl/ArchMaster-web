@@ -9,8 +9,8 @@ export class ChallengeClient extends ApiClient{
   public baseRoute: string = 'v1/challenges/'
   
 
-  public async list(){
-    const res = await this.client.get<Challenge>(this.baseUrl)
+  public async list(): Promise<Challenge[]>{
+    const res = await this.client.get<Challenge[]>(this.baseUrl)
     console.log(res)
     return res.data
   }

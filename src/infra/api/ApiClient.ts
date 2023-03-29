@@ -6,7 +6,7 @@ export abstract class ApiClient{
   public readonly client: AxiosInstance
   public abstract baseRoute: string
 
-  constructor(public readonly baseApi: string = '', ){
+  constructor(public readonly baseApi: string = 'http://localhost:3000/api/', ){
 
     this.client = axios.create({
       baseURL: this.baseUrl,
