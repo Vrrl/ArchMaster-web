@@ -29,11 +29,11 @@
         />
       </div>
       <div class="challenges" v-if="!loading">
-        <div class="challenge" v-for="(challenge, index) in challenges" :key="index">
+        <div class="challenge" v-for="(challenge, index) in challenges" :key="challenge.id">
           <div class="info">
-            <div class="title">Challenge Title </div>
+            <div class="title">{{ challenge.title }}</div>
             <div class="small">
-              <div class="creator">Osama</div>
+              <div class="creator">{{ challenge.creator?.name }}</div>
               <div class="times-started"></div>
             </div>
           </div>
@@ -43,8 +43,7 @@
             <div class="language">C#</div>
           </div>
           <div class="tags">
-            <div class="tag">DDD</div>
-            <div class="tag">Microservices</div>
+            <div class="tag" v-for="tag in challenge.tags">{{ tag }}</div>
           </div>
         </div>
       </div>
@@ -71,7 +70,6 @@ export default defineComponent({
   methods: {
     async fillList(): Promise<void> {
       this.challenges = await challengeClient.list()
-      // this.challenges = [...this.challenges, ...this.challenges]
       this.loading = false
     }
   },
